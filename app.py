@@ -7,6 +7,11 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+# Resume Page
+@app.route('/resume')
+def resume():
+    return render_template('resume.html')
+
 
 # if __name__ == "__main__":
 #     app.run(debug=True)
