@@ -1,49 +1,40 @@
 {% extends "layout.html" %}
-
 {% block title %} Home {% endblock %}
-
 {% block body %}
 <div class="row mt-5">
-  <div class="col-lg-3 col-md-3 col-sm-12">
-    <div class="card bg-transparent border-0">
-      <img src="https://docs.google.com/uc?id=1XpU1FHq4qIZva_xaBYwFQ8tlhZVDP_Dx" class="card-img-top rounded-circle" alt="headshot">
-      <div class="card-body">
-        <h5 class="card-title mt-3">Irwin Marcano</h5>
-        <p class="card-text lead color-test font-weight-bold">Web Developer</p>
-        <hr>
-        <p class="card-text">I have been in the Technology industry for 7 years. I began my career as a Web Developer 2 years ago, learned Front-End Development using technologies like HTML, CSS, JavaScript, VueJs, Rails, Django, and Back-End Development with technologies like Ruby and Python.
-        </p>
-      </div>
-      <a class="btn btn-dark mt-5" href="#" role="button">Submit Ideas</a>
-    </div>
-  </div>
-
-  <div class="col-lg-8 offset-lg-1 col-md-8 offset-md-1 col-sm-12">
-    <div class="row">
-      <div class="jumbotron bg-transparent m-0 p-0">
-        <h1 class="display-4 font-weight-bold">Hey - Let's make ideas a reality!</h1>
-        <blockquote class="blockquote">
-          <p class="lead">"We all have dreams. But in order to make dreams come into reality, it takes an awful lot of determination, dedication, self-discipline, and effort."</p>
-          <footer class="blockquote-footer">Jesse Owens</footer>
-        </blockquote>
-        <hr>
-      </div>
-    </div>
-
-    <div class="row mt-4">
-      <div class="col-sm-12">
-        <h3 class="mt-4 mb-3">Get in touch</h3>
-        <div class="row justify-content-around">
-          <a class="" href="https://github.com/irwinx16" target="_black"><img src="https://docs.google.com/uc?id=1qenoe8B7YbccuDpLAmO312lxnVhy21s1" class="w-75"></a>
-
-          <a class="" href="https://www.linkedin.com/in/irwinmarcano/" target="_black"><img src="https://docs.google.com/uc?id=1DKGdcSWxeKopkfW_jeppr8xhrPbQW5BO" class="w-75"></a>
-
-          <a class="" href="mailto:irgranados16@gmail.com?subject=Interview Request - <POSITION>" target="_black"><img src="https://docs.google.com/uc?id=1XoFHduV6hfyasUBGMGYBNBQr6jXNnC_p" class="w-75"></a>
-
-          <a class="" href="https://drive.google.com/file/d/1jGUjQ0MHy6y1qdxDXH9bRgSvhBPzt9Px/view?usp=sharing" target="_black"><img src="https://docs.google.com/uc?id=11DqVBbRU5SkAaCGYHovOj6lNZ12HvfDx" class="w-75"></a>
+    <div class="col-lg-3 col-md-3 col-sm-12">
+        <div class="card bg-transparent border-0">
+            <img src="https://docs.google.com/uc?id=1XpU1FHq4qIZva_xaBYwFQ8tlhZVDP_Dx" class="card-img-top rounded-circle" alt="headshot">
+            <div class="card-body">
+                <h2 class="card-title display-4">Irwin Marcano</h2>
+                <hr>
+                <p class="card-text h3">Web Developer</p>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+    <div class="col-lg-8 offset-lg-1 col-md-8 offset-md-1 col-sm-12">
+        <div class="row">
+            <div class="jumbotron bg-transparent m-0 p-0">
+                <h1 class="display-4 font-weight-bold">Hey - Let's make ideas a reality!</h1>
+                <blockquote class="blockquote mt-3">
+                    <p class="lead">Technology enthusiast with over seven years of professional experience. I transitioned into Web Development two years ago. My experience has focused on: web development tools and best practices, Front-End and Back-End technologies, object-oriented programming, problem-solving and researching. I’d love to explore new ways technology can be used to improve the world and collaborate with others to make it happen.
+                    </p>
+                    <a class="btn btn-dark" href="{{ url_for('resume') }}" role="button">Learn more</a>
+                </blockquote>
+                <hr>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-sm-12">
+                <h3 class="mt-4 mb-3">Get in touch</h3>
+                <div class="row justify-content-around">
+                    <a class="" href="https://github.com/irwinx16" target="_black"><img src="https://docs.google.com/uc?id=1qenoe8B7YbccuDpLAmO312lxnVhy21s1" class="w-75"></a>
+                    <a class="" href="https://www.linkedin.com/in/irwinmarcano/" target="_black"><img src="https://docs.google.com/uc?id=1DKGdcSWxeKopkfW_jeppr8xhrPbQW5BO" class="w-75"></a>
+                    <a class="" href="mailto:irgranados16@gmail.com?subject=Interview Request - <POSITION>" target="_black"><img src="https://docs.google.com/uc?id=1XoFHduV6hfyasUBGMGYBNBQr6jXNnC_p" class="w-75"></a>
+                    <a class="" href="https://drive.google.com/file/d/11a2jnF5vxlj_9WkLKCZq_thydibxiqiB/preview" target="_black"><img src="https://docs.google.com/uc?id=11DqVBbRU5SkAaCGYHovOj6lNZ12HvfDx" class="w-75"></a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
