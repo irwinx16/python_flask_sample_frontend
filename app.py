@@ -1,11 +1,28 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, json
+import requests
 
 app = Flask(__name__)
 
 # Home Page
 @app.route('/')
 def index():
-    return render_template('index.html')
+    WEATHER_KEY = '8f7e90ae66919f9651f80c29d46c0a45'
+    city = 'Chicago'
+
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&appid=8f7e90ae66919f9651f80c29d46c0a45'.format(city)
+    response = requests.get(url).json()
+    k_temp = response['main']['temp']
+    c_temp = k_temp - 273.15
+    f_temp = ((k_temp - 273.15)*1.8)+32
+    print (" Temperature : ", f_temp," Degree Fahrenheit")
+    print (" Temperature : ", c_temp," Degree Celsius")
+
+
+
+
+    # breakpoint()
+
+    return render_template('index.html', temp=f_temp)
 
 # Resume Page
 @app.route('/resume')
