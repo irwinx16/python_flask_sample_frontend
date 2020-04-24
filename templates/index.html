@@ -9,15 +9,17 @@
                 <h2 class="card-title">Irwin Marcano</h2>
                 <hr>
                 <p class="card-text h4">Web Developer</p>
-                <p>Temperature: {{ temp_f }} Degree Fahrenheit</p>
-                <p>Temperature: {{ temp_c }} Degree Celsius</p>
+                <img src="http://openweathermap.org/img/wn/{{ icon }}.png" alt="Image" height="100" width="100">
+                <p class="lead font-italic">{{ description }}</p>
+                <p class="lead font-italic">CITY</p>
+                <p class="h1 font-italic">{{ temp_f }}<span>&#176;</span> F <span class="lead">{{ temp_c }}<span>&#176;</span> C</span></p>
             </div>
         </div>
     </div>
     <div class="col-lg-8 offset-lg-1 col-md-8 offset-md-1 col-sm-12">
         <div class="row">
             <div class="jumbotron bg-transparent m-0 p-0">
-                <h1 class="display-4 font-weight-bold">Hey - Let's make ideas a reality!</h1>
+                {# <h1 class="display-4 font-weight-bold">Hey - Let's make ideas a reality!</h1> #}
                 <blockquote class="blockquote mt-3">
                     <p class="lead">Technology enthusiast with over seven years of professional experience. I transitioned into Web Development two years ago. My experience has focused on: web development tools and best practices, Front-End and Back-End technologies, object-oriented programming, problem-solving and researching. I’d love to explore new ways technology can be used to improve the world and collaborate with others to make it happen.
                     </p>

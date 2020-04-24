@@ -14,12 +14,15 @@ def index():
     k_temp = response['main']['temp']
     f_temp = int(((k_temp - 273.15) * 1.8) + 32)
     c_temp = int(k_temp - 273.15)
+    icon   = response['weather'][0]['icon']
+    desc   = response['weather'][0]['description']
     print(" Temperature : ", f_temp, " Degree Fahrenheit")
     print(" Temperature : ", c_temp, " Degree Celsius")
+    print(" Description: ", desc)
 
-# breakpoint()
+    # breakpoint()
 
-    return render_template('index.html', temp_f=f_temp, temp_c=c_temp)
+    return render_template('index.html', temp_f=f_temp, temp_c=c_temp, icon=icon, description=desc)
 
 # Resume Page
 @app.route('/resume')
