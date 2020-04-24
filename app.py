@@ -12,17 +12,17 @@ def index():
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&appid=8f7e90ae66919f9651f80c29d46c0a45'.format(city)
     response = requests.get(url).json()
     k_temp = response['main']['temp']
-    c_temp = k_temp - 273.15
-    f_temp = ((k_temp - 273.15)*1.8)+32
-    print (" Temperature : ", f_temp," Degree Fahrenheit")
-    print (" Temperature : ", c_temp," Degree Celsius")
+    f_temp = int(((k_temp - 273.15) * 1.8) + 32)
+    c_temp = int(k_temp - 273.15)
+    print(" Temperature : ", f_temp, " Degree Fahrenheit")
+    print(" Temperature : ", c_temp, " Degree Celsius")
 
 
 
 
     # breakpoint()
 
-    return render_template('index.html', temp=f_temp)
+    return render_template('index.html', temp_f=f_temp, temp_c=c_temp)
 
 # Resume Page
 @app.route('/resume')
