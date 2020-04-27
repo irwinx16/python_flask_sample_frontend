@@ -16,11 +16,6 @@ def index():
     c_temp = int(k_temp - 273.15)
     icon   = response['weather'][0]['icon']
     desc   = response['weather'][0]['description']
-    print(" Temperature : ", f_temp, " Degree Fahrenheit")
-    print(" Temperature : ", c_temp, " Degree Celsius")
-    print(" Description: ", desc)
-
-    # breakpoint()
 
     return render_template('index.html', temp_f=f_temp, temp_c=c_temp, icon=icon, description=desc)
 
