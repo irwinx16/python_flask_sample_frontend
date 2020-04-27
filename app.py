@@ -3,6 +3,15 @@ import requests
 
 app = Flask(__name__)
 
+# Set development/production environment
+ENV = 'dev'
+
+if ENV == 'dev':
+    app.debug = True
+else:
+    app.debug = False
+
+
 # Home Page
 @app.route('/')
 def index():
@@ -34,4 +43,4 @@ def get_geolocation():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
