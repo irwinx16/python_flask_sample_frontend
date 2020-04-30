@@ -28,12 +28,12 @@ def resume():
 
 # Geo-Location
 def get_geolocation():
-    url = 'http://ip-api.com/json/{}'.format(request.headers.get('X-Forwarded-For', request.remote_addr))
+    # Call to API, passing client IP address.
+    url = 'http://ip-api.com/json/'
     response = requests.get(url).json()
-    breakpoint()
     city = response['city']
     return city
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
