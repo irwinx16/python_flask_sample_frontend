@@ -3,14 +3,6 @@ import requests
 
 app = Flask(__name__)
 
-# Set development/production environment
-ENV = 'dev'
-
-if ENV == 'dev':
-    app.debug = True
-else:
-    app.debug = False
-
 
 # Home Page
 @app.route('/')
@@ -36,11 +28,12 @@ def resume():
 
 # Geo-Location
 def get_geolocation():
-    url = 'http://ip-api.com/json/'
+    url = 'http://ip-api.com/json/{}'.format(request.headers.get('X-Forwarded-For', request.remote_addr))
     response = requests.get(url).json()
+    breakpoint()
     city = response['city']
     return city
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
