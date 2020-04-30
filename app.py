@@ -28,8 +28,7 @@ def resume():
 
 # Geo-Location
 def get_geolocation():
-    # Call to API, passing client IP address.
-    url = 'http://ip-api.com/json/'
+    url = 'http://ip-api.com/json/{}'.format(request.environ.get('HTTP_X_REAL_IP', request.remote_addr))
     response = requests.get(url).json()
     city = response['city']
     return city
