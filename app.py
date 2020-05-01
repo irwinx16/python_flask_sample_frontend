@@ -10,7 +10,7 @@ def index():
     WEATHER_KEY = '8f7e90ae66919f9651f80c29d46c0a45'
     city = get_geolocation()
 
-    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&appid={}'.format(city, WEATHER_KEY)
+    url = 'https://api.openweathermap.org/data/2.5/weather?q={}&appid={}'.format(city, WEATHER_KEY)
     response = requests.get(url).json()
     k_temp = response['main']['temp']
     f_temp = int(((k_temp - 273.15) * 1.8) + 32)
@@ -28,7 +28,7 @@ def resume():
 
 # Geo-Location
 def get_geolocation():
-    url = 'http://ip-api.com/json/{}'.format(request.headers.get('X-Forwarded-For'))
+    url = 'https://ip-api.com/json/{}'.format(request.headers.get('X-Forwarded-For'))
     response = requests.get(url).json()
     city = response['city']
     return city
