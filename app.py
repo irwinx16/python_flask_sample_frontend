@@ -7,8 +7,9 @@ app = Flask(__name__)
 # Home Page
 @app.route('/')
 def index():
+
     WEATHER_KEY = '8f7e90ae66919f9651f80c29d46c0a45'
-    city = get_geolocation()
+    city = "Chicago" # get_geolocation()
 
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&appid={}'.format(city, WEATHER_KEY)
     response = requests.get(url).json()
@@ -26,13 +27,11 @@ def index():
 def resume():
     return render_template('resume.html')
 
+
+
 # Geo-Location
 def get_geolocation():
     url = 'http://ip-api.com/json/{}'.format(request.environ.get('HTTP_X_REAL_IP', request.remote_addr))
     response = requests.get(url).json()
     city = response['city']
     return city
-
-
-if __name__ == '__main__':
-    app.run()
