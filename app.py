@@ -27,6 +27,17 @@ def index():
 def resume():
     return render_template('resume.html')
 
+#Contact Page
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+@app.route('/sent', methods=['POST'])
+def sent():
+    if not request.form.get('email') or not request.form.get('message'):
+        return render_template('contact.html')
+    return render_template('sent.html', email=request.form.get('email'))
+
 
 
 # Geo-Location
