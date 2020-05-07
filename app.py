@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, json
 import requests
+import smtplib
 
 app = Flask(__name__)
 
@@ -34,9 +35,16 @@ def contact():
 
 @app.route('/sent', methods=['POST'])
 def sent():
-    if not request.form.get('email') or not request.form.get('message'):
+    email       = request.form.get('email')
+    contact_msg = request.form.get('message')
+    if not email or not contact_msg:
         return render_template('contact.html')
-    return render_template('sent.html', email=request.form.get('email'))
+    message =  email + '\n' + contact_msg
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.starttls()
+    server.login('irgranados16@gmail.com', 'granados-16')
+    server.sendmail('irgranados16@gmail.com', 'irgranados16@gmail.com', message)
+    return render_template('sent.html', email=email)
 
 
 
