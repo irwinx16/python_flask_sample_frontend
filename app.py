@@ -39,10 +39,10 @@ def sent():
     contact_msg = request.form.get('message')
     if not email or not contact_msg:
         return render_template('contact.html')
-    message =  email + '\n' + contact_msg
+    message = 'Subject: New Request | imarcano.com \n' + email + '\n' + contact_msg
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login('irgranados16@gmail.com', 'granados-16')
+    server.login('irgranados16@gmail.com', 'password')
     server.sendmail('irgranados16@gmail.com', 'irgranados16@gmail.com', message)
     return render_template('sent.html', email=email)
 
