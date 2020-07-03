@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title> {% block title %}{% endblock %} - imarcano </title>
 </head>
 
@@ -24,11 +24,8 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="{{ url_for('resume') }}">Resume</a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="parking">Parking</a>
-                        </li> -->
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="contact" tabindex="-1">Contact</a>
+                            <a class="nav-link" href="{{ url_for('contact') }}" tabindex="-1">Contact</a>
                         </li>
                     </ul>
                 </div>
